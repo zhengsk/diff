@@ -1,0 +1,19 @@
+{
+  "name": "diff",
+  "version": "1.0.0",
+  "description": "Object diff",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "diff"
+  ],
+  "author": "zsk",
+  "license": "ISC",
+  "dependencies": {
+    "deep-object-diff": "^1.0.3",
+    "lodash": "^4.17.4",
+    "object-diff": "0.0.4"
+  }
+}
