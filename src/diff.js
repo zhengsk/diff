@@ -6,15 +6,18 @@ const diff = (lhs, rhs) => {
   if (!isObject(lhs) || !isObject(rhs)) return rhs; // return updated rhs
 
   if(Array.isArray(lhs) || Array.isArray(rhs)) {
-    if(A)
-    return rhs;
+    if(JSON.stringify(lhs) === JSON.stringify(rhs)) {
+      return {}
+    }
+    else {
+      return rhs;
+    }
   }
 
   const l = properObject(lhs);
   const r = properObject(rhs);
 
   const deletedValues = Object.keys(l).reduce((acc, key) => {
-    debugger;
     return r.hasOwnProperty(key) ? acc : { ...acc, [key]: undefined };
   }, {});
 

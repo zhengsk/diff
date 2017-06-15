@@ -14,8 +14,8 @@
     "name": "diff",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "webpack": "webpack",
-        "dev": "webpack-dashboard -- webpack-dev-server --progress --colors --content-base --open dist/"
+        "build": "webpack",
+        "dev": "webpack-dashboard -- webpack-dev-server --progress --colors --content-base --open"
     },
     "version": "1.0.0",
     "devDependencies": {

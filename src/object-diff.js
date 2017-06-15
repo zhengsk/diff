@@ -16,6 +16,4 @@ var b = {
 
 let result = diff(a, b);
 
-console.info(result);
-
 console.dirxml(result);
