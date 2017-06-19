@@ -1,3 +1,4 @@
+import jsShortid from 'js-shortid';
 import { isEmpty, isObject } from './utils/utils';
 
 import preTemplate from './template_default';
@@ -6,7 +7,11 @@ import postTemplate from './template_modified';
 let preLayouts = preTemplate.layouts;
 let postLayouts = postTemplate.layouts;
 
-let diffObj = {};
+let diffObj = {
+    version: '1.0.0',
+    key: 'key_' + jsShortid.gen(),
+    rulers: {}
+};
 
 postLayouts.forEach((postLayout, index) => {
     let preLayout = preLayouts[index];
@@ -46,9 +51,9 @@ postLayouts.forEach((postLayout, index) => {
 
         // Exsit
         if (!isEmpty(diff)) {
-            let hash = 'rule_' + new Date().getTime() + parseInt(Math.random() * 100000);
-            preElement[hash] = true;
-            diffObj[hash] = diff;
+            let hash = 'rule_' + jsShortid.gen();
+            preElement[diffObj.key] = hash;
+            diffObj.rulers[hash] = diff;
         }
 
     });
@@ -56,3 +61,5 @@ postLayouts.forEach((postLayout, index) => {
 
 debugger;
 console.dirxml(diffObj);
+
+console.dirxml(JSON.stringify(diffObj));

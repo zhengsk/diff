@@ -2,6 +2,7 @@
     "author": "zsk",
     "dependencies": {
         "deep-object-diff": "^1.0.3",
+        "js-shortid": "^0.1.1",
         "lodash": "^4.17.4",
         "object-diff": "0.0.4"
     },
@@ -15,7 +16,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "webpack",
-        "dev": "webpack-dashboard -- webpack-dev-server --progress --colors --content-base --open"
+        "dev": "webpack-dashboard -- webpack-dev-server --progress --colors"
     },
     "version": "1.0.0",
     "devDependencies": {
