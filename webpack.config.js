@@ -5,10 +5,13 @@ var DashboardPlugin = require('webpack-dashboard/plugin');
 
 module.exports = {
     devtool: 'cheap-module-eval-source-map',
-    entry: './src/object-diff.js',
+    entry: {
+        getDiff: './src/object-diff.js',
+        mergeDiff: './src/merge-diff.js'
+    },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle-[hash].js'
+        filename: '[name]-bundle-[hash].js'
     },
 
     module: {
@@ -30,7 +33,13 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: 'index.html'
+            template: 'index.html',
+            chunks: ['getDiff']
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'merge-diff.html',
+            template: 'index.html',
+            chunks: ['mergeDiff']
         }),
         new webpack.HotModuleReplacementPlugin(), // 启动全局 HMR
         new DashboardPlugin()

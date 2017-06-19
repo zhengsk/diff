@@ -63,3 +63,5 @@ debugger;
 console.dirxml(diffObj);
 
 console.dirxml(JSON.stringify(diffObj));
+
+console.dirxml(JSON.stringify(preTemplate));
